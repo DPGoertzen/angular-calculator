@@ -23,10 +23,11 @@ angular.module('calculator').controller('MainController', function($scope){
   $scope.total = 0;
 
   $scope.numHandler = function(clickedButton) {
+  // the way we determine if we're done with the first number is by
+  // checking to see if an operand has been pressed.
     if(!operandPressed){
       $scope.firstNumber.push(clickedButton);
       console.log($scope.firstNumber);
-      // return $scope.firstNumber;
     } else {
       $scope.secondNumber.push(clickedButton);
       console.log($scope.secondNumber);
@@ -40,7 +41,6 @@ angular.module('calculator').controller('MainController', function($scope){
   };
 
   $scope.equalsHandler = function(){
-    operandPressed = false;
     var finishedFirstNumber = parseInt($scope.firstNumber.join(""));
     var finishedSecondNumber = parseInt($scope.secondNumber.join(""));
     switch(currentOper){
@@ -62,6 +62,8 @@ angular.module('calculator').controller('MainController', function($scope){
     } else {
       $scope.total = "Don't divide by 0, asshole."
     }
+    // resetting for the next calculation
+    operandPressed = false;
     $scope.firstNumber = [];
     $scope.secondNumber = [];
 
