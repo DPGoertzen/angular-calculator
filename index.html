@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="calculator">
+  <head>
+    <meta charset="utf-8">
+    <title>Calculator</title>
+    <script src="angular.min.js" charset="utf-8"></script>
+    <script src="client.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="stylesheet.css" charset="utf-8">
+  </head>
+  <body ng-controller="MainController">
+    <div ng-model="display">
+      <h2>{{total}}</h2>
+    </div>
+    <div class="container">
+
+    <button class="{{numButton}}" ng-click="numHandler(numButton)" ng-repeat="numButton in numButtonList track by $index">{{numButton}}</button>
+
+    <button class="{{operButton}}" ng-click="operHandler(operButton)" ng-repeat="operButton in operButtonList track by $index">{{operButton}}</button>
+
+    <button class="{{equals}}" ng-click="equalsHandler()">{{equals}}</button>
+
+    </div>
+
+
+  </body>
+</html>
