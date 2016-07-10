@@ -3,7 +3,7 @@
 <html ng-app="calculator">
   <head>
     <meta charset="utf-8">
-    <title>Calculator</title>
+    <title>HappyCalc</title>
     <script src="angular.min.js" charset="utf-8"></script>
     <script src = "https://code.jquery.com/jquery.js"></script>
     <script src="client.js" charset="utf-8"></script>
@@ -26,8 +26,7 @@
           <div class="calcContainer">
             <div class="row">
                 <div class="numbers col-md-3 col-xs-3 mbottom">
-                  <button class="{{numButton}} btn btn-flex" ng-click="numHandler(numButton)" ng-repeat="numButton in numButtonList track by $index">{{numButton}}</button>
-                  <!-- <button class="{{equals}} eqButton btn" ng-click="equalsHandler()">{{equals}}</button> -->
+                  <button class="{{numButton}} numButtons btn btn-flex" ng-click="numHandler(numButton)" ng-repeat="numButton in numButtonList track by $index">{{numButton}}</button>
                 </div>
                 <div class="operators col-md-3 col-xs-3 mbottom">
                   <button class="{{operButton}} opButton btn btn-block" ng-click="operHandler(operButton)" ng-repeat="operButton in operButtonList track by $index">{{operButton}}</button>

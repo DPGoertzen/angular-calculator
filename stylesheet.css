@@ -24,7 +24,9 @@ a:hover {
    }
 
 button {
+  border: none;
   background-color: aquamarine;
+  box-shadow: inset 0px 0px 5px 2px MediumAquaMarine;
   margin: 5px 5px;
 }
 
@@ -32,10 +34,11 @@ button {
   font-family: 'Oswald', sans-serif;
   text-align: right;
   background-color: powderblue;
-  border-radius: 5%;
+  border-radius: 5px;
   width: 200px;
   height: 30px;
   margin: 0 auto;
+  box-shadow: inset 0px 0px 5px 2px skyblue;
 }
 
 .calcBackground {
@@ -47,6 +50,7 @@ button {
   background-color: plum;
   border-radius: 25px;
   box-shadow: 10px 10px 10px grey;
+  box-shadow: inset 0px 0px 20px 10px orchid, 10px 10px 5px grey;
 }
 
 .calcContainer {
@@ -54,9 +58,13 @@ button {
   width: 250px;
 }
 
+.numButtons {
+}
+
 .opButton {
   width: 20%;
   background-color: blueViolet;
+  box-shadow: inset 0px 0px 5px 2px rebeccaPurple;
   color: white;
 }
 
