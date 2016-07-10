@@ -12,6 +12,29 @@ var secondNum = [];
 var equals = "=";
 var currentOper = "";
 var total = 0;
+
+var insultArray = [
+  ", moron.",
+  ". Idiot.",
+  ". C'mon dummy!",
+  ", el stupido.",
+  "! Tool.",
+  ", what a muppet.",
+  ", dirtbag!",
+  ", weaksauce.",
+  ", you must be SO proud.",
+  ". Or is it?"
+];
+
+function randomPicker(max){
+  return Math.floor(Math.random() * max);
+}
+
+function insultGen(){
+  var random = randomPicker(insultArray.length);
+  return insultArray[random];
+}
+
 angular.module('calculator', []);
 
 angular.module('calculator').controller('MainController', function($scope){
@@ -47,10 +70,17 @@ angular.module('calculator').controller('MainController', function($scope){
             total = finishedFirstNumber / finishedSecondNumber;
             break;
         }
-        if(total != Infinity){
-          $scope.total = total;
-        } else {
-          $scope.total = "Divided by 0!"
+        // special gag functionalities: 8+8 = 18, and 7+7 = 77.
+        if(finishedFirstNumber == 8 && finishedSecondNumber == 8 && currentOper == "+"){
+          total = 18;
+          $scope.total = total.toString() + insultGen();
+        } else if(finishedFirstNumber == 7 && finishedSecondNumber == 7 && currentOper == "+"){
+          total = 77;
+          $scope.total = total.toString() + insultGen();
+        } else if(total != Infinity) {
+          $scope.total = total.toString() + insultGen();
+        }else{
+          $scope.total = "Don't divide by 0, ass."
         }
         // resetting for the next calculation
         operandPressed = false;
@@ -72,5 +102,34 @@ angular.module('calculator').controller('MainController', function($scope){
     currentOper = clickedButton;
     $scope.total = currentOper;
   };
+
+  // $scope.equalsHandler = function(){
+  //   var finishedFirstNumber = parseInt($scope.firstNumber.join(""));
+  //   var finishedSecondNumber = parseInt($scope.secondNumber.join(""));
+  //   switch(currentOper){
+  //     case "+":
+  //       total = finishedFirstNumber + finishedSecondNumber;
+  //       break;
+  //     case "-":
+  //       total = finishedFirstNumber - finishedSecondNumber;
+  //       break;
+  //     case "*":
+  //       total = finishedFirstNumber * finishedSecondNumber;
+  //       break;
+  //     case "/":
+  //       total = finishedFirstNumber / finishedSecondNumber;
+  //       break;
+  //   }
+  //   if(total != Infinity){
+  //     $scope.total = total.toString() + insultGen();
+  //   } else {
+  //     $scope.total = "Don't divide by 0, asshole."
+  //   }
+  //   // resetting for the next calculation
+  //   operandPressed = false;
+  //   $scope.firstNumber = [];
+  //   $scope.secondNumber = [];
+  //
+  // }
 
 });

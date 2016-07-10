@@ -8,32 +8,32 @@
     <script src="client.js" charset="utf-8"></script>
     <meta name = "viewport" content = "width = device-width, initial-scale = 1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Titillium+Web" rel="stylesheet">
     <link rel="stylesheet" href="stylesheet.css" charset="utf-8">
   </head>
   <body ng-controller="MainController">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <h1><a href="saltyindex.html">HappyCalc:</a> The calculator that loves you!</h1>
+    </nav>
     <div class="container">
       <div class="col-md-4">
+        <div class="calcBackground">
 
-
-        <header>
-          <h1>SaltyCalc</h1>
-          <h3>The calculator that hates you!</h3>
-        </header>
-
-        <div ng-model="display">
-          <h2>{{total}}</h2>
-        </div>
-        <div class="container">
-          <div class="row">
-              <div class="col-md-3 col-xs-3 mbottom">
-                <button class="{{numButton}} btn btn-flex" ng-click="numHandler(numButton)" ng-repeat="numButton in numButtonList track by $index">{{numButton}}</button>
-                <button class="{{equals}} eqButton btn" ng-click="equalsHandler()">{{equals}}</button>
-              </div>
-              <div class="col-md-3 col-xs-3 mbottom">
-                <button class="{{operButton}} opButton btn btn-block" ng-click="operHandler(operButton)" ng-repeat="operButton in operButtonList track by $index">{{operButton}}</button>
-              </div>
+          <div ng-model="display" class="display">
+            <h3>{{total}}</h3>
           </div>
+          <div class="calcContainer">
+            <div class="row">
+                <div class="numbers col-md-3 col-xs-3 mbottom">
+                  <button class="{{numButton}} btn btn-flex" ng-click="numHandler(numButton)" ng-repeat="numButton in numButtonList track by $index">{{numButton}}</button>
+                  <!-- <button class="{{equals}} eqButton btn" ng-click="equalsHandler()">{{equals}}</button> -->
+                </div>
+                <div class="operators col-md-3 col-xs-3 mbottom">
+                  <button class="{{operButton}} opButton btn btn-block" ng-click="operHandler(operButton)" ng-repeat="operButton in operButtonList track by $index">{{operButton}}</button>
+                </div>
+            </div>
 
+          </div>
         </div>
       </div>
     </div>

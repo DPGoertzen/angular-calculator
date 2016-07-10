@@ -1,6 +1,57 @@
+header {
+  text-align: center;
+}
+
+nav {
+  font-family:'Titillium Web', sans-serif;
+
+  color: white;
+  text-align: center;
+}
+
+.container {
+  margin-top: 100px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+a:hover {
+    color: white;
+    text-decoration:none;
+    cursor:default;
+   }
+
 button {
   background-color: aquamarine;
   margin: 5px 5px;
+}
+
+.display {
+  font-family: 'Oswald', sans-serif;
+  text-align: right;
+  background-color: powderblue;
+  border-radius: 5%;
+  width: 200px;
+  height: 30px;
+  margin: 0 auto;
+}
+
+.calcBackground {
+  margin-left: 30%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 250px;
+  height: 250px;
+  background-color: plum;
+  border-radius: 25px;
+  box-shadow: 10px 10px 10px grey;
+}
+
+.calcContainer {
+  margin: 0 auto;
+  width: 250px;
 }
 
 .opButton {
@@ -9,8 +60,12 @@ button {
   color: white;
 }
 
-.eqButton {
-  background-color: lightSeaGreen;
-  margin: 5px 0px 5px -5px;
+.numbers {
+  width: 150px;
+  margin-left: 40px;
+  padding-right: 0px;
+}
 
+.operators {
+  padding-left: 0px;
 }
