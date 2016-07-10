@@ -1,4 +1,4 @@
-
+// regular "good" calculator. for hidden mode, click "happycalc" in index.html.
 var numButtonArray = [];
 for(var i = 1; i<10; i++){
   numButtonArray.push(i);

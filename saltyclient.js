@@ -1,4 +1,4 @@
-
+// evil calculator is evil. Special functionality for 8 + 8, 7 + 7, and / 0
 var numButtonArray = [];
 for(var i = 1; i<10; i++){
   numButtonArray.push(i);
@@ -13,6 +13,8 @@ var equals = "=";
 var currentOper = "";
 var total = 0;
 
+
+// the special sauce.
 var insultArray = [
   ", moron.",
   ". Idiot.",
@@ -34,6 +36,8 @@ function insultGen(){
   var random = randomPicker(insultArray.length);
   return insultArray[random];
 }
+
+// end special sauce
 
 angular.module('calculator', []);
 
