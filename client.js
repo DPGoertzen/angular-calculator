@@ -1,3 +1,4 @@
+
 var numButtonArray = [];
 for(var i = 1; i<10; i++){
   numButtonArray.push(i);
@@ -11,6 +12,28 @@ var secondNum = [];
 var equals = "=";
 var currentOper = "";
 var total = 0;
+
+var insultArray = [
+  ", moron.",
+  ". Idiot.",
+  ". C'mon dummy!",
+  ", el stupido.",
+  "! Tool.",
+  ", what a muppet.",
+  ", dirtbag!",
+  ", weaksauce.",
+  ", you must be SO proud.",
+  ". Or do the math yourself."
+];
+
+function randomPicker(max){
+  return Math.floor(Math.random() * max + 1);
+}
+
+function insultGen(){
+  var random = randomPicker(insultArray.length);
+  return insultArray[random];
+}
 
 angular.module('calculator', []);
 
@@ -27,9 +50,11 @@ angular.module('calculator').controller('MainController', function($scope){
   // checking to see if an operand has been pressed.
     if(!operandPressed){
       $scope.firstNumber.push(clickedButton);
+      $scope.total = $scope.firstNumber.join("");
       console.log($scope.firstNumber);
     } else {
       $scope.secondNumber.push(clickedButton);
+      $scope.total = $scope.secondNumber.join("");
       console.log($scope.secondNumber);
     }
   };
@@ -37,7 +62,7 @@ angular.module('calculator').controller('MainController', function($scope){
   $scope.operHandler = function(clickedButton) {
     operandPressed = true;
     currentOper = clickedButton;
-    console.log("operand", currentOper);
+    $scope.total = currentOper;
   };
 
   $scope.equalsHandler = function(){
@@ -58,7 +83,8 @@ angular.module('calculator').controller('MainController', function($scope){
         break;
     }
     if(total != Infinity){
-      $scope.total = total;
+
+      $scope.total = total.toString() + insultGen();
     } else {
       $scope.total = "Don't divide by 0, asshole."
     }
@@ -67,9 +93,6 @@ angular.module('calculator').controller('MainController', function($scope){
     $scope.firstNumber = [];
     $scope.secondNumber = [];
 
-    console.log(total);
-    console.log(finishedFirstNumber);
-    console.log(finishedSecondNumber);
   }
 
 });

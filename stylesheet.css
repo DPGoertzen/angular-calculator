@@ -1,0 +1,16 @@
+button {
+  background-color: aquamarine;
+  margin: 5px 5px;
+}
+
+.opButton {
+  width: 20%;
+  background-color: blueViolet;
+  color: white;
+}
+
+.eqButton {
+  background-color: lightSeaGreen;
+  margin: 5px 0px 5px -5px;
+
+}
