@@ -11,6 +11,7 @@ var firstNum = [];
 var secondNum = [];
 var equals = "=";
 var currentOper = "";
+//total is what displays on the calculator "screen"
 var total = 0;
 angular.module('calculator', []);
 
@@ -23,8 +24,8 @@ angular.module('calculator').controller('MainController', function($scope){
   $scope.total = 0;
 
   $scope.numHandler = function(clickedButton) {
-  // the way we determine if we're done with the first number is by
-  // checking to see if an operand has been pressed.
+
+// clears everything and resets the operand pressed flag.
     if(clickedButton == "c"){
       $scope.total = 0;
       operandPressed = false;
@@ -56,6 +57,8 @@ angular.module('calculator').controller('MainController', function($scope){
         operandPressed = false;
         $scope.firstNumber = [];
         $scope.secondNumber = [];
+    // the way we determine if we're done with the first number is by
+    // checking to see if an operand has been pressed.
     } else if(!operandPressed){
       $scope.firstNumber.push(clickedButton);
       $scope.total = $scope.firstNumber.join("");
